@@ -6,6 +6,6 @@
 private class DemoTest {
     @IsTest
     static void testBehavior() {
-        System.debug('This is a test');
+        Boolean bool = Utils.isChanged();
     }
 }
