@@ -36,5 +36,11 @@
         <members>*</members>
         <name>CustomMetadata</name>
     </types>
+    <types>
+        <members>Campaign</members>
+        <members>CampaignMember</members>
+        <members>CampaignType__mdt</members>
+        <name>CustomObject</name>
+    </types>
     <version>52.0</version>
 </Package>
