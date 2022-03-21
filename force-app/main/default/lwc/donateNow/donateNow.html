@@ -1,0 +1,48 @@
+<!--
+ - Created by sonal on 2021-07-07.
+ -->
+
+<!-- Donate Now -->
+<template>
+
+  <c-notification-panel></c-notification-panel>
+
+  <template if:true={rendered}>
+
+    <lightning-card  title="Donation Details">
+      <div class="slds-m-horizontal_small">
+        <lightning-radio-group name="radioGroup"
+                               label="Donation Frequency"
+                               options={donateTypes}
+                               value={donateType}
+                               onchange={handleDonateType}
+                               required></lightning-radio-group>
+
+        <lightning-input type="number" name="amount" label="Amount" formatter="currency" step=".01" onchange={amountChange} required></lightning-input>
+
+        <lightning-combobox
+          name="progress"
+          label="Fund Name"
+          value={fundId}
+          options={funds}
+          required
+          onchange={handleFundName}></lightning-combobox>
+
+        <lightning-textarea name="message" label="Message (optional)" onchange={messageChange}></lightning-textarea>
+      </div>
+    </lightning-card>
+
+
+    <lightning-card  title="Donor Details">
+      <div class="slds-m-horizontal_small">
+        <lightning-input type="email" label="Email" onchange={emailChange} required></lightning-input>
+        <lightning-input type="text" label="First Name" onchange={firstNameChange}></lightning-input>
+        <lightning-input type="text" label="Last Name" onchange={lastNameChange} required></lightning-input>
+      </div>
+    </lightning-card>
+
+    <lightning-button variant="brand" label="Complete Donation Now" title="Complete Donation Now" onclick={handleClick}></lightning-button>
+
+  </template>
+
+</template>
